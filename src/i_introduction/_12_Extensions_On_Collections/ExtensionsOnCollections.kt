@@ -17,7 +17,7 @@ fun todoTask12(): Nothing = TODO(
 )
 
 fun task12(): List<Int> {
-    todoTask12()
-    return arrayListOf(1, 5, 2)
+    return arrayListOf(1, 5, 2).sortDescending()
 }
 
+fun List<Int>.sortDescending(): List<Int> = this.sortedWith(java.util.Comparator<Int> { x, y -> y - x })

@@ -1,6 +1,7 @@
 package iii_conventions
 
 import iii_conventions.test.s
+import iv_properties.toMillis
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -21,5 +22,5 @@ class _25_Comparison {
         assertTrue("The date ${first.s} should be after ${second.s}", first > second)
     }
 
-    operator fun MyDate.compareTo(other: MyDate): Int = todoTask25()
+    operator fun MyDate.compareTo(other: MyDate): Int = (this.toMillis() - other.toMillis()).toInt()
 }

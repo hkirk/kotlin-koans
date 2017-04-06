@@ -1,5 +1,7 @@
 package ii_collections
 
+import i_introduction._12_Extensions_On_Collections.todoTask12
+
 fun example() {
 
     val result = listOf("abc", "12").flatMap { it.toList() }
@@ -9,10 +11,10 @@ fun example() {
 
 val Customer.orderedProducts: Set<Product> get() {
     // Return all products this customer has ordered
-    todoCollectionTask()
+    return this.orders.flatMap { it.products }.toSet()
 }
 
 val Shop.allOrderedProducts: Set<Product> get() {
     // Return all products that were ordered by at least one customer
-    todoCollectionTask()
+    return this.customers.flatMap { it.orderedProducts }.toSet()
 }
